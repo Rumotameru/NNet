@@ -82,13 +82,14 @@ def model_proccesing():
 
     ## Save
     # torch.save(model, "model.pt")
+    torch.save(model.state_dict(), "model_state.pt")
 
     return train_losses, valid_losses, valid_acc, test_acc
 
 
 if __name__ == "__main__":
-    #t_losses, v_losses, valid_accuracy, test_accuracy = model_proccesing()
-    #visualization.print_losses(t_losses, v_losses)
-    #visualization.print_acc(valid_accuracy, test_accuracy)
-    model = torch.load("model1.pt")
+    t_losses, v_losses, valid_accuracy, test_accuracy = model_proccesing()
+    visualization.print_losses(t_losses, v_losses)
+    visualization.print_acc(valid_accuracy, test_accuracy)
+
 
